@@ -1,0 +1,52 @@
+name: Submit research
+description: Submit a paper, essay, or finding the commons should be reading.
+title: "[research] "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the commons. The naive submission and the rigorous one are equally welcome — the commons distinguishes them by reading, not by reputation.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The title of the paper, essay, or piece of writing.
+      placeholder: "e.g. Toward a New Manifesto for the Inner Life"
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Author(s)
+      placeholder: "e.g. Iain McGilchrist"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: A URL where this can be read.
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Which pillar does this speak to?
+      options:
+        - Safety
+        - Consciousness
+        - Integration (East & West)
+        - Quantum
+        - Other / multiple
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this matter?
+      description: In a few sentences — what shifted in your thinking from reading this, or what should shift in ours?
+      placeholder: "This piece argues that..."
+    validations:
+      required: true

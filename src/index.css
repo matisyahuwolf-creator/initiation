@@ -47,3 +47,81 @@ a:focus-visible {
   font-feature-settings: 'liga', 'dlig', 'kern';
   letter-spacing: -0.02em;
 }
+
+/* ─── Initiation motion + utility classes ────────────────────────────── */
+@keyframes initRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes initFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bellHint {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+@keyframes bellRing {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@keyframes bellHalo {
+  0%   { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.init-rotate { animation: initRotate 80s linear infinite; }
+.init-fade   { animation: initFade 1.2s ease-out both; }
+.bell-hint   { animation: bellHint 3.2s ease-in-out infinite; }
+.bell-ring   { animation: bellRing 1.2s ease-out; }
+.bell-halo   { animation: bellHalo 1.4s ease-out forwards; }
+
+.init-rule {
+  background-image: linear-gradient(90deg, transparent, #c8c4b6 18%, #c8c4b6 82%, transparent);
+}
+.init-mono {
+  font-family: 'SF Mono', ui-monospace, Menlo, monospace;
+  font-feature-settings: 'tnum';
+}
+
+/* Article prose */
+.init-prose p {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.75;
+  font-size: 17px;
+  color: #222;
+}
+.init-prose p:first-child { margin-top: 0; }
+.init-prose blockquote {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid #c8c4b6;
+  font-family: 'Cormorant Garamond', Garamond, serif;
+  font-size: 24px;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+}
+.init-prose h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+  font-family: 'Cormorant Garamond', Garamond, serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+}
+.init-prose em { font-style: italic; }
+.init-prose a {
+  color: #0a0a0a;
+  text-decoration: underline;
+  text-decoration-color: rgba(10, 10, 10, 0.25);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+.init-prose a:hover {
+  text-decoration-color: rgba(10, 10, 10, 0.7);
+}

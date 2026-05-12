@@ -1,0 +1,35 @@
+name: Open question
+description: Post an open question for the commons. The naive ones are the most useful.
+title: "[question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open questions are the engine. Naive questions especially — they are usually the ones the field has stopped asking, which is why they are still unanswered.
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+      placeholder: "What does it mean to..."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (optional)
+      description: Where did this question come from? What have you already ruled out?
+    validations:
+      required: false
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Closest pillar
+      options:
+        - Safety
+        - Consciousness
+        - Integration (East & West)
+        - Quantum
+        - Other / multiple
+    validations:
+      required: true
